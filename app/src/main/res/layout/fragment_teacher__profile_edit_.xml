@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.Teacher_Profile_edit_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile Photo"
+        android:textSize="15sp"
+        android:textColor="@color/colorBlack"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/teacher_edit_profile_id"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/colorPrimary"
+        android:src="@drawable/profileheader"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorLightblack"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="40dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_tchr_profile_edit_id"
+            android:textColorHint="@color/colorLightblack"
+            android:textColor="@color/colorLightblack"
+            android:hint="Name"/>
+    </android.support.design.widget.TextInputLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="20dp"
+       android:orientation="vertical">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="8dp"
+           android:textSize="18sp"
+           android:text="Subjects"
+           android:textColorHint="@color/colorLightblack"
+           />
+       <android.support.v7.widget.AppCompatSpinner
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="8dp"
+           android:layout_marginRight="8dp"
+           android:id="@+id/name_spinner_id">
+
+       </android.support.v7.widget.AppCompatSpinner>
+   </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:textSize="18sp"
+            android:text="Class"
+            android:textColorHint="@color/colorLightblack"
+            />
+        <android.support.v7.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:id="@+id/class_spinnr_id">
+
+        </android.support.v7.widget.AppCompatSpinner>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:textSize="18sp"
+            android:text="Total Experience"
+            android:textColorHint="@color/colorLightblack"
+            />
+        <android.support.v7.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:id="@+id/experience_spinnr_id">
+
+        </android.support.v7.widget.AppCompatSpinner>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/edit_shortdescription_id"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:inputType="textMultiLine"
+          android:hint="Small Description"
+          android:gravity="left"
+          android:lines="6"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_student_loginid"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonbg"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="60dp"
+            android:text="Submit"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+         />
+    </LinearLayout>
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

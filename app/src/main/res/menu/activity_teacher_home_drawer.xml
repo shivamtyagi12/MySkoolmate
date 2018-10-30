@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single" android:id="@+id/group1">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Weekly Updates" />
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/group2">
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="About AryaSchool" />
+    </group>
+
+
+    <group android:checkableBehavior="single" android:id="@+id/group3">
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Help Support" />
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/group4">
+
+    <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Rate AryaSchool" />
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/group5">
+    <item
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Privacy Policy" />
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/group6">
+        <item
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Log Out" />
+
+    </group>
+
+
+
+
+</menu>
