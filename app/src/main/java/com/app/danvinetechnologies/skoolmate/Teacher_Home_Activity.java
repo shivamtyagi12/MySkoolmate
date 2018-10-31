@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
@@ -35,7 +36,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.danvinetechnologies.skoolmate.Adapter.ViewPagerAdapterrr;
+import com.app.danvinetechnologies.skoolmate.Fragment.Teacher_Home_Fragment;
 import com.app.danvinetechnologies.skoolmate.Fragment.Teacher_Profile_edit_Fragment;
+import com.app.danvinetechnologies.skoolmate.Fragment.Teacher_Schedule_bottom_Nav;
 import com.app.danvinetechnologies.skoolmate.Ui.CustomTypefaceSpan;
 
 import java.util.Timer;
@@ -45,9 +48,8 @@ public class Teacher_Home_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-
     ImageView imageViewheader;
-    TextView textViewname,textViewphoneid;
+    TextView textViewname, textViewphoneid;
     TextView textViewcompleteprofile;
     ProgressBar progressBar;
 
@@ -59,9 +61,21 @@ public class Teacher_Home_Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        if (savedInstanceState == null) {
+            Teacher_Home_Fragment teacher_home_fragment = new Teacher_Home_Fragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container_home_id, teacher_home_fragment).commit();
+
+        }
+
+      //  Intent intent = getIntent();
+       // String remember = intent.getStringArrayExtra("remember").toString();
+
+       // Toast.makeText(this, remember, Toast.LENGTH_SHORT).show();
 
         //navigation header id
         imageViewheader = findViewById(R.id.imageView_header_id);
@@ -71,9 +85,8 @@ public class Teacher_Home_Activity extends AppCompatActivity
         progressBar = findViewById(R.id.progressbar_header_id);
 
 
-
         bottomNavigationView = findViewById(R.id.bottomnavigationid);
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -90,10 +103,11 @@ public class Teacher_Home_Activity extends AppCompatActivity
         header.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext()," header clicked now",Toast.LENGTH_LONG).show();
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawers();
                 Teacher_Profile_edit_Fragment fragment = new Teacher_Profile_edit_Fragment();
                 android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-               fragmentTransaction.replace(R.id.container_home_id,fragment);
+                fragmentTransaction.replace(R.id.container_home_id, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
@@ -102,13 +116,7 @@ public class Teacher_Home_Activity extends AppCompatActivity
         });
 
 
-
-
-
-
-
-
-       //customisation of font-1
+        //customisation of font-1
         Menu m = navigationView.getMenu();
         for (int i = 0; i < m.size(); i++) {
             MenuItem mi = m.getItem(i);
@@ -124,17 +132,13 @@ public class Teacher_Home_Activity extends AppCompatActivity
         //
 
 
-
-
     }
 
 
     //
 
 
-
-
-        //Customisation of font-2
+    //Customisation of font-2
     private void applyFontToMenuItem(MenuItem mi) {
         Typeface font = Typeface.createFromAsset(getAssets(), "Fonts/RelishPro/Relish Pro Light.ttf");
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
@@ -142,9 +146,6 @@ public class Teacher_Home_Activity extends AppCompatActivity
         mi.setTitle(mNewTitle);
     }
     //
-
-
-
 
 
     //
@@ -206,4 +207,41 @@ public class Teacher_Home_Activity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+
+            switch (menuItem.getItemId()) {
+                case R.id.teacher_home_btmid:
+
+                    Teacher_Home_Fragment teacher_home_fragment = new Teacher_Home_Fragment();
+                    android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.container_home_id, teacher_home_fragment).commitNow();
+
+                    return true;
+                case R.id.navigation_items:
+
+                    Teacher_Schedule_bottom_Nav teacher_schedule_bottom_nav = new Teacher_Schedule_bottom_Nav();
+                    android.support.v4.app.FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction2.replace(R.id.container_home_id, teacher_schedule_bottom_nav).commitNow();
+
+                    return true;
+                case R.id.teacher_account_btmid:
+
+                    Teacher_Profile_edit_Fragment teacher_profile_edit_fragment = new Teacher_Profile_edit_Fragment();
+                    android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction1.replace(R.id.container_home_id, teacher_profile_edit_fragment).commitNow();
+
+                    return true;
+
+            }
+            return false;
+        }
+
+
+    };
+
+
 }

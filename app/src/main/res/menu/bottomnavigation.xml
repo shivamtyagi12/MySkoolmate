@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_shop"
-        android:icon="@drawable/ic_menu_camera"
+        android:id="@+id/teacher_home_btmid"
+        android:icon="@drawable/ic_home_black_24dp"
         android:title="Home"/>
 
     <item android:id="@+id/navigation_items"
-        android:icon="@drawable/ic_menu_gallery"
-        android:title="Account"/>
+        android:icon="@drawable/ic_schedule_black_24dp"
+        android:title="Schedule"/>
 
-    <item android:id="@+id/navigation_card"
-        android:icon="@drawable/ic_menu_share"
-        android:title="Profile"/>
+    <item android:id="@+id/teacher_account_btmid"
+        android:icon="@drawable/ic_account_box_black_24dp"
+        android:title="Account"/>
 
 </menu>

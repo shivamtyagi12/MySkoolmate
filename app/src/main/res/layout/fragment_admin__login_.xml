@@ -1,67 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragment.Admin_Login_Fragment">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/textinputlayoutadminnameid"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textinputlayoutadminnameid">
+                android:layout_height="wrap_content">
+
                 <EditText
-                    android:id="@+id/emailid"
+                    android:id="@+id/edit_text_admin_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:hint="Name of Admin"
+                    android:hint="Enter Mobile Number"
+                    android:inputType="phone"
                     android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/textinputlayoutmobilenoid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:id="@+id/textinputlayoutmobilenoid"
                 app:passwordToggleEnabled="true">
+
                 <EditText
+                    android:id="@+id/edit_text_admin_unique_key"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:hint="Mobile No."
-                    android:inputType="phone"
-                    android:singleLine="true"/>
+                    android:hint="Enter Unique Key"
+                    android:inputType="text"
+                    android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/btn_student_loginid"
+                android:id="@+id/btn_admin_login"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/buttonbg"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:text="Submit"
-                android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp"
-                android:layout_marginTop="50dp"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Remember Me"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
