@@ -20,7 +20,8 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         imageViewhome = findViewById(R.id.img_home_id);
        // imageViewboy = findViewById(R.id.imgboyid);
-       // TranslateAnimation animation = new TranslateAnimation(0, 200,0, 0);          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
+       // TranslateAnimation animation = new TranslateAnimation(0, 200,0, 0);
+        //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
        // animation.setDuration(1000);  // animation duration
        // animation.setRepeatCount(1);  // animation repeat count
        // animation.setRepeatMode(1);   // repeat animation (left to right, right to left )
@@ -48,6 +49,7 @@ public class SplashActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(SplashActivity.this, com.app.danvinetechnologies.skoolmate.LoginActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 }
             };
